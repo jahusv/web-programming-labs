@@ -15,9 +15,25 @@ footer {
     background-color: black; 
     color: LightGreen; 
     padding: 10px; 
-    text-align: right"
+    text-align: right;
 }
 
 a {
     color:green
+}
+
+a:visited {
+    color:blanchedalmond;
+    }
+
+a:hover {
+    color:red;
+    text-decoration:underline;
+    background-color:white;
+    font-weight: bold;
+}
+
+a;:active {
+    color: pink;
+    background-color: green;
 }
