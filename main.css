@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-image: linear-gradient(to right botoom, black, red, green,yellow);
+    background-image: linear-gradient(to right bottom, black, red, green,yellow);
     color: lightgreen;
     padding: 10px;
 }
@@ -19,21 +19,24 @@ footer {
 }
 
 a {
-    color:green
+    color:green, yellow;
+    transition: 600ms;
+
 }
 
-a:visited {
-    color:blanchedalmond;
-    }
+ a:visited {
+    color:plum;
+}
 
 a:hover {
     color:red;
     text-decoration:underline;
     background-color:white;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-a:active {
+a:active { 
     color: pink;
     background-color: green;
 }
