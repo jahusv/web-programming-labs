@@ -1,12 +1,12 @@
 body {
-    background: linear-gradient( to right bottom, black, red, green, yellow);
+    background-color: blanchedalmond;
     color: maroon;
     font-family: Arial;
     margin: 0px;
 }
 
 header {
-    background-color: black;
+    background: linear-gradient( to right bottom, black, red, green, yellow);
     color: lightgreen;
     padding: 10px;
 }
@@ -33,7 +33,7 @@ a:hover {
     font-weight: bold;
 }
 
-a;:active {
+a:active {
     color: pink;
     background-color: green;
 }
