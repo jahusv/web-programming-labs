@@ -10,12 +10,20 @@ header {
     color: lightgreen;
     padding: 10px;
 }
+header:hover {
+    background-image: linear-gradient(to  left bottom, black, red, green,yellow);
+    color: lightcoral;
+}
 
 footer {
     background: linear-gradient( to left, red, orange, yellow, green, blue, navy, purple); 
     color: LightGreen; 
     padding: 10px; 
     text-align: right;
+}
+footer:hover {
+    background: linear-gradient( to right, red, orange, yellow, green, blue, navy, purple); 
+    color: lightcyan; 
 }
 
 a {
