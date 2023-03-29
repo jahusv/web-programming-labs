@@ -7,28 +7,45 @@
     <title>Панчук Анастасия Андреевна. Лабораторная 4</title>
     <link rel="stylesheet" href="main.css">
     <style>
-        div {
-            margin: 20px;
-            border: 1px solid;
-            border-radius: 7px;
-            padding: 7px;
-            width: 500px;
-            height: 120px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            position: relative;
-            background-color: beige;
-            z-index: 2;
-        }
-       .second:hover {
-            opacity: 1;
-           z-index: 4; 
+         main div {
+        margin: 20px;
+        border: 1px solid;
+        border-radius: 7px;
+        padding: 7px;
+        width: 500px;
+        height: 120px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+        background-color: beige;
+        z-index: 2;
         }
         .second {
             z-index: 1;
             left: 380px;
             top: 100px;
             position: fixed;
+        }
+       .second:hover {
+            opacity: 1;
+            z-index: 4; 
+        }
+        aside{
+            position: absolute;
+            left: 0;
+            width: 300px;
+            background: black;
+            height: 100%;
+            overflow: auto;
+        }
+        aside div {
+            color: white;
+            padding: 10px;
+            text-align: justify;
+            text-indent: 20px;
+        }
+        main {
+             margin-left: 320px;
         }
         
     </style>
@@ -37,6 +54,13 @@
     <header>
         НГТУ, ФБ, Лабораторная работа 4
     </header>
+    <aside>
+        <div>Об этой книге</div>
+        <div>
+            «Кашта́нка» — рассказ русского писателя Антона Павловича Чехова. 
+            Опубликован в газете «Новое время» на Рождество 1887 года под заглавием «В учёном сообществе».
+        </div>
+    </aside>
     <main>
         <div>Молодая рыжая собака — помесь такса с дворняжкой — очень похожая мордой на лисицу, бегала взад и вперед по тротуару и беспокойно оглядывалась по сторонам. Изредка она останавливалась и, плача, приподнимая то одну озябшую лапу, 
         то другую, старалась дать себе отчет: как это могло случиться, что она заблудилась?
