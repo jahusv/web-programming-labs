@@ -20,6 +20,11 @@ footer {
     color: LightGreen; 
     padding: 10px; 
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999; 
+    width: 99%;
 }
 footer:hover {
     background: linear-gradient( to right, red, orange, yellow, green, blue, navy, purple); 
@@ -51,3 +56,4 @@ a:active {
     color: pink;
     background-color: green;
 }
+
