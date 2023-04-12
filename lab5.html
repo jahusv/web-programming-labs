@@ -16,7 +16,37 @@
             let result = a+b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+
+        function showMultiply() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a-b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showMultiplication() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a*b;
+            alert('Произведение ' + a + ' и ' + b + ' равно ' + result);
+        }    
         
+        function showDivision() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a/b;
+            alert('Частное ' + a + ' и ' + b + ' равна ' + result);
+        }
+
         function showAuthor() {
             let author = 'Автор страницы:\n Панчук Анастасия Андреевна/\n Ходите в театр почаще';
             alert(author);
@@ -45,6 +75,9 @@
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
         <div class="message" onclick="showAuthor()">Узнать кто автор страницы</div>
+        <div class="message" onclick="showMultiply()">Найти разность чисел</div>
+        <div class="message" onclick="showMultiplication()">Найти произведение чисел</div>
+        <div class="message" onclick="showDivision()">Найти разность чисел</div>
 
     </main> 
     <footer onclick="showAuthor()">
