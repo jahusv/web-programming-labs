@@ -51,6 +51,14 @@
             let author = 'Автор страницы:\n Панчук Анастасия Андреевна/\n Ходите в театр почаще';
             alert(author);
         }
+        function changeOutput (buttonNum, backColor, textColor, borderColor){
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderBlockColor = borderColor;
+        }
+
     </script>
     <style>
         .message {
@@ -64,6 +72,12 @@
             margin: 4px;
 
         }
+        #output {
+            border: 3px solid;
+            width: 300px;
+            height: 40px;
+        }
+
     </style>
 </head>
 <body>
@@ -78,6 +92,17 @@
         <div class="message" onclick="showMultiply()">Найти разность чисел</div>
         <div class="message" onclick="showMultiplication()">Найти произведение чисел</div>
         <div class="message" onclick="showDivision()">Найти разность чисел</div>
+         
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1,'red','yellow', 'blue')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2,'black','lime', 'pink')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3,'green','purple', 'white')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4,'orange','white','yellow')">
+        </div>
+
+        <div>
+            <div id="output"></div>
+        </div>
 
     </main> 
     <footer onclick="showAuthor()">
