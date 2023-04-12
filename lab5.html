@@ -6,11 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Панчук Анастасия Андреевна. Лабораторная 5</title>
     <link rel="stylesheet" href="main.css">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a+b;
+            alert('Сумма ' + a + ' и ' + b + 'равна ' + result);
+        }
+        
+    </script>
+    <style>
+        .message {
+            cursor: pointer;
+            display: inline-block;
+            border: 1px solid green;
+            background-color: lightgray;
+            display: inline-block;
+            border-radius: 7px;
+            padding: 4px;
+            margin: 4px;
+
+        }
+    </style>
 </head>
 <body>
     <header>
         НГТУ, ФБ, Лабораторная работа 5
-    </header>  
+    </header> 
+    <main>
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message">Узнать кто автор страницы</div>
+
+    </main> 
     <footer>
         &copy;Панчук Анастасия, ФБИ-13, 2 курс, 2023
     </footer> 
