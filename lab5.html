@@ -58,6 +58,22 @@
             output.style.color = textColor;
             output.style.borderBlockColor = borderColor;
         }
+        
+        function rasschet (){
+            let inputA = document.getElementById('Apple');
+            let a = parseInt(inputA.value);
+            let inputB = document.getElementById('Pear');
+            let b = parseInt(inputB.value);
+            let inputC = document.getElementById('Orange');
+            let c = parseInt(inputC.value);
+            let inputD = document.getElementById('Melon');
+            let d = parseInt(inputD.value);
+            let inputE = document.getElementById('Strawberry');
+            let e = parseInt(inputE.value);
+            let result1 = a*100 + b*80 + c*150 + d*300 + e*110;
+            let output = document.getElementById('result1');
+            output.innerHTML = 'Итого: ' + result1;
+        }
 
     </script>
     <style>
@@ -72,10 +88,13 @@
             margin: 4px;
 
         }
-        #output {
+             
+
+        .korzina {
             border: 3px solid;
-            width: 300px;
-            height: 40px;
+            width: 320px;
+            margin: 10px;
+            border-radius: 7px;
         }
 
     </style>
@@ -88,10 +107,10 @@
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
-        <div class="message" onclick="showAuthor()">Узнать кто автор страницы</div>
         <div class="message" onclick="showMultiply()">Найти разность чисел</div>
         <div class="message" onclick="showMultiplication()">Найти произведение чисел</div>
         <div class="message" onclick="showDivision()">Найти разность чисел</div>
+        <div class="message" onclick="showAuthor()">Узнать кто автор страницы</div>
          
         <div>
             <input type="button" value="Кнопка 1" onclick="changeOutput(1,'red','yellow', 'blue')">
@@ -102,6 +121,17 @@
 
         <div>
             <div id="output"></div>
+        </div>
+
+        <div class="korzina">
+            <h2>Корзина товаров</h2>
+            <label>Яблоки (100р/шт):<br><input type="number" value="9" id="Apple"></label><br>
+            <label>Груши (80р/шт):<br><input type="number" value="9" id="Pear"></label><br>
+            <label>Апельсины (150р/шт):<br><input type="number" value="9" id="Orange"></label><br>
+            <label>Дыни (300р/шт):<br><input type="number" value="9" id="Melon"></label><br>
+            <label>Клубника (110р/шт):<br><input type="number" value="9" id="Strawberry"></label><br>
+            <input type="button" value="Рассчитать" onclick="rasschet()"><br> 
+            <div id="result1"></div>
         </div>
 
     </main> 
