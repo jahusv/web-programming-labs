@@ -22,9 +22,12 @@ footer {
     text-align: right;
     bottom: 0;
     position: fixed;
-    width: 100%;
+    width: 100%;/*99*/
     transition: 600ms;
+    left: 0;
+    z-index: 999; 
 }
+
 footer:hover {
     background: linear-gradient( to right, red, orange, yellow, green, blue, navy, purple); 
     color: lightcyan; 
@@ -56,3 +59,4 @@ a:active {
     color: pink;
     background-color: green;
 }
+
