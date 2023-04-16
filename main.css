@@ -26,7 +26,7 @@ footer {
     text-align: right;
     bottom: 0;
     position: fixed;
-    width: 100%;/*99*/
+    width: 99%;
     transition: 600ms;
     left: 0;
     z-index: 999; 
