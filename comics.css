@@ -8,19 +8,10 @@ div {
     z-index: 2;
     background-color: #FFFFF0;
     box-shadow: 1px 0.5px 0.5px 1px #4682B4;
+    opacity: 1;
+   }
+div:hover {
     opacity: 0;
-    animation: show 3s 1;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-
-}
-@keyframes show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 header {
