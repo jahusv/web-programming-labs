@@ -16,6 +16,15 @@
             width: 320px;
             text-align: center;           
         }
+
+        .rules {
+            border: 1px solid;
+            border-radius: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            width: 320px;
+            text-align: center; 
+        }
     </style>
 
     <script>
@@ -63,6 +72,11 @@
             document.getElementById('result').innerHTML = '';
             }
         
+         function showRules() {
+            let disp;
+            disp[3].style.display = 'none';
+             ('rules') [4].style.display = 'block';
+         }   
 
     </script>
 
@@ -76,6 +90,25 @@
             <button onclick="startGame()">
                 Сыграть в игру
             </button>
+        </div>
+        <div class="rules">
+            <button onclick="showRules()">
+                Показать правила игры
+            </button>
+        </div>
+        <div>
+            <button >
+                Скрыть правила игры
+            </button>
+        </div>
+            <h2>Правила игры:</h2>
+            <ol>
+                <li>Выберите число от 1 до 100.</li>
+                <li>Попробуйте угадать, какое число загадал компьютер.</li>
+                <li>Если ваше число больше или меньше загаданного, то компьютер даст подсказку.</li>
+                <li>Попробуйте угадать число за наименьшее количество попыток.</li>
+                <li>Удачи!</li>
+            </ol>
         </div>
 
         <div class="game" style="display: none;">
