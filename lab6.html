@@ -73,10 +73,16 @@
             }
         
          function showRules() {
-            let disp;
-            disp[3].style.display = 'none';
-             ('rules') [4].style.display = 'block';
+            let screens = document.getElementsByClassName('rules');
+            screens [0].style.display = 'none';
+            screens [1].style.display = 'block';
          }   
+
+         function hideRules() {
+            let screens = document.getElementsByClassName('rules');
+            screens [0].style.display = 'block';
+            screens [1].style.display = 'none';
+         }
 
     </script>
 
@@ -86,31 +92,13 @@
         НГТУ, ФБ, Лабораторная работа 6
     </header> 
     <main>
+    <!-- первый экран игры-->
         <div class="game">
             <button onclick="startGame()">
                 Сыграть в игру
             </button>
         </div>
-        <div class="rules">
-            <button onclick="showRules()">
-                Показать правила игры
-            </button>
-        </div>
-        <div>
-            <button >
-                Скрыть правила игры
-            </button>
-        </div>
-            <h2>Правила игры:</h2>
-            <ol>
-                <li>Выберите число от 1 до 100.</li>
-                <li>Попробуйте угадать, какое число загадал компьютер.</li>
-                <li>Если ваше число больше или меньше загаданного, то компьютер даст подсказку.</li>
-                <li>Попробуйте угадать число за наименьшее количество попыток.</li>
-                <li>Удачи!</li>
-            </ol>
-        </div>
-
+        <!-- второй экран игры-->
         <div class="game" style="display: none;">
             <h1>Угадай число</h1>
             <div>
@@ -120,7 +108,7 @@
                 <div id="result"></div>
             </div>
         </div>
-
+        <!-- третий экран игры-->
         <div class="game" style="display: none;">
             <h1>Поздравляем, вы выиграли!</h1>
             <div>
@@ -132,6 +120,26 @@
             <button onclick="again()">
                 Сыграть еще раз
             </button>
+        </div>
+        <!-- первый экран правил -->
+        <div class="rules">
+            <button onclick="showRules()">
+                Показать правила игры
+            </button>
+        </div>
+        <!-- второй экран правил -->
+        <div class="rules" style="display: none;">
+            <button onclick="hideRules()">
+                Скрыть правила игры
+            </button>
+           <h2>Правила игры:</h2>
+            <ol>
+                <li>Выберите число от 1 до 100.</li>
+                <li>Попробуйте угадать, какое число загадал компьютер.</li>
+                <li>Если ваше число больше или меньше загаданного, то компьютер даст подсказку.</li>
+                <li>Попробуйте угадать число за наименьшее количество попыток.</li>
+                <li>Удачи!</li>
+            </ol>
         </div>
 
     </main>
