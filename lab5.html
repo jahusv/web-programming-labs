@@ -44,7 +44,7 @@
         }
 
         function showAuthor() {
-            let author = 'Автор страницы:\n Панчук Анастасия Андреевна/\n Ходите в театр почаще';
+            let author = 'Автор страницы:\n Панчук Анастасия Андреевна\n Ходите в театр почаще';
             alert(author);
         }
 
@@ -72,35 +72,35 @@
             output.innerHTML = 'Итого: ' + result1;
         }
 
-        function clickOn1 () {
-            document.getElementById('1').style.display = "none";           
+        function clickOn1() {
+            document.getElementById('1').style.display = 'none';           
         }
-        function clickOn2 (){
-            document.getElementById('2').style.display = "none";
+        function clickOn2(){
+            document.getElementById('2').style.display = 'none';        
         }
-        function ClickOn3 (){
-            document.getElementById('3').style.display = "none";
+        function clickOn3 () {
+            document.getElementById('3').style.display = 'none';
         }
-        function clickOn4 (){
-            document.getElementById('4').style.display = "none";
+        function clickOn4 () {
+            document.getElementById('4').style.display = 'none';
         }
-        function clickOn5 (){
-            document.getElementById('5').style.display = "none";
+        function clickOn5 () {
+            document.getElementById('5').style.display = 'none';
         }
-        function clickOn6 (){
-            document.getElementById('6').style.display = "none";
+        function clickOn6 () {
+            document.getElementById('6').style.display = 'none';
         }
-        function clickOn7 (){
-            document.getElementById('7').style.display = "none";
+        function clickOn7(){
+            document.getElementById('7').style.display = 'none';
         }
-        function clickOn8 (){
-            document.getElementById('8').style.display = "none";
+        function clickOn8(){
+            document.getElementById('8').style.display = 'none';
         }
-        function clickOn9 (){
-            document.getElementById('9').style.display = "none";
+        function clickOn9(){
+            document.getElementById('9').style.display = 'none';
         }
-        function clickOn10 (){
-            document.getElementById('10').style.display = "none";
+        function clickOn10(){
+            document.getElementById('10').style.display = 'none';
         }
 
     </script>
@@ -147,7 +147,7 @@
 </head>
 <body>
 
-    <header onclick="showAuthor()">
+    <header onclick='showAuthor()'>
         НГТУ, ФБ, Лабораторная работа 5
     </header> 
 
@@ -183,19 +183,22 @@
         </div>
 
        <div > 
-        <div class="circles" onclick="clickOn1()" style="position: fixed; right: 1340px; background-color: #f47f35;" id="1">1</div>
-        <div class="circles" onclick="clickOn2()" style="position: fixed; right: 1260px; background-color: #f6069e;" id="2">2</div>
-        <div class="circles" onclick="ClickOn3()" style="position: fixed; right: 1180px; background-color: #0754f2;" id="3">3</div>
-        <div class="circles" onclick="clickOn4()" style="position: fixed; right: 1100px; background-color: #e286cd;" id="4">4</div>
-        <div class="circles" onclick="clickOn5()" style="position: fixed; right: 1020px; background-color: #461d59;" id="5">5</div>
-        <div class="circles" onclick="clickOn6()" style="position: fixed; right: 940px; background-color: #94527a;" id="6">6</div>
-        <div class="circles" onclick="clickOn7()" style="position: fixed; right: 860px; background-color: #7cd3af;" id="7">7</div>
-        <div class="circles" onclick="clickOn8()" style="position: fixed; right: 780px; background-color: #ae2092;" id="8">8</div>
-        <div class="circles" onclick="clickOn9()" style="position: fixed; right: 700px; background-color: #beb108;" id="9">9</div>
-        <div class="circles" onclick="clickOn10()" style="position: fixed; right: 620px; background-color: #1379a1;" id="10">10</div>
+        <div class="circles" onclick="clickOn1()" style="position: fixed; right: 1340px; background-color: #f47f35;" id='1'>1</div>
+        <div class="circles" onclick="clickOn2()" style="position: fixed; right: 1260px; background-color: #f6069e;" id='2'>2</div>
+        <div class="circles" onclick="clickOn3()" style="position: fixed; right: 1180px; background-color: #0754f2;" id='3'>3</div>
+        <div class="circles" onclick="clickOn4()" style="position: fixed; right: 1100px; background-color: #e286cd;" id='4'>4</div>
+        <div class="circles" onclick="clickOn5()" style="position: fixed; right: 1020px; background-color: #461d59;" id='5'>5</div>
+        <div class="circles" onclick="clickOn6()" style="position: fixed; right: 940px; background-color: #94527a;" id='6'>6</div>
+        <div class="circles" onclick="clickOn7()" style="position: fixed; right: 860px; background-color: #7cd3af;" id='7'>7</div>
+        <div class="circles" onclick="clickOn8()" style="position: fixed; right: 780px; background-color: #ae2092;" id='8'>8</div>
+        <div class="circles" onclick="clickOn9()" style="position: fixed; right: 700px; background-color: #beb108;" id='9'>9</div>
+        <div class="circles" onclick="clickOn10()" style="position: fixed; right: 620px; background-color: #1379a1;" id='10'>10</div>
     </div> 
+        <!-- <div>
+            <div id="circleId"></div>
+        </div> -->
 
-    </main> 
+    </main>
     <footer onclick="showAuthor()">
         &copy;Панчук Анастасия, ФБИ-13, 2 курс, 2023
     </footer> 
