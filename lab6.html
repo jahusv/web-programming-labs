@@ -35,6 +35,24 @@
             color: white;
             font-family: arial; 
         }
+
+        .moveblock{
+            border: 1px solid;
+            margin: 10px auto;
+            padding: 40px;
+            width: 150px;
+            height: 150px;
+            box-sizing: border-box; 
+            background-color: #CD5C5C;
+            color: white;
+            font-family: arial;
+            left: 0;
+            position: absolute;
+            cursor: pointer;
+        }
+
+
+
     </style>
 
     <script>
@@ -121,6 +139,22 @@
                 document.getElementById('color-name').innerHTML = 'жёлтый';
             }
          }
+         let isMoved = false;
+         function moveBlock(div) {
+            if (!isMoved){
+                div.style.left = '90%';
+                div.style.transitionDuration = '3s';
+                div.style.transform = 'rotate(0)';
+                isMoved = true;
+            }
+            else {
+                div.style.left = 0;
+                div.style.transitionDuration = '3s';
+                div.style.transform = 'rotate(4turn)';
+                isMoved = false;
+            }
+
+         }
 
     </script>
 
@@ -184,6 +218,11 @@
         <div class="color" ondblclick="changeColor(this)">
             Цвет: <span id= "color-name">жёлтый</span><br>
             Сделайте двойной щелчок, чтобы сменить
+        </div>
+
+        <!-- двигающийся блок -->
+        <div class="moveblock" onclick="moveBlock(this)">
+           <span> Нажми на меня</span>
         </div>
 
     </main>
