@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Панчук Анастасия Андреевна. Лабраторная 7</title>
     <link rel="stylesheet" href="main.css">
+    
+    <style>
+        .transparentBloks {
+            opacity: 0%;
+        }
+    </style>
 
     <script>
+        // создание простфых блоков
         function addBlocks() {
             let blocks = document.getElementById('blocks');
             for (let i = 0; i < 10; i++){
@@ -18,6 +25,7 @@
             }
         }
 
+        // курс доллара
         function showExchange() {
             let exchange = [70.5174, 70.1217, 70.0414, 70.3847,70.5991,
                             70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
@@ -36,6 +44,19 @@
             let averange = sum / exchange.length;
             document.getElementById('detail').innerHTML = 'Среднее значение: ' + averange;
         }
+
+        // полупрозрачные блоки
+        function addTransparentBlock(){
+            let transparentBlocks = document.getElementById('transparent-blocks');
+            for (let i = 0; i < 11; i++){
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок с прозрачностью '+ i*10 + '%';
+                block.style.opacity = i*10 + '%';
+
+                transparentBlocks.appendChild(block);
+        }
+    }
+
     </script>
 </head>
 <body>
@@ -49,6 +70,9 @@
         <button onclick="showExchange()">Курс доллара</button>
         <table border="1" id="dollar-exchange"></table>
         <div id="detail"></div>
+
+        <button onclick="addTransparentBlock()"> Создать полупрозрачные блоки </button>
+        <div class="transparentBlocks" id="transparent-blocks"></div>
 
     </main>
     <footer>
