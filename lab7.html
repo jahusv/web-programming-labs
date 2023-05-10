@@ -17,6 +17,25 @@
                 blocks.appendChild(block);
             }
         }
+
+        function showExchange() {
+            let exchange = [70.5174, 70.1217, 70.0414, 70.3847,70.5991,
+                            70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
+            let table = document.getElementById('dollar-exchange');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange [i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            let sum = 0;
+            for (let i = 0; i < exchange.length; i++){
+                sum = sum + exchange[i];
+            }
+            let averange = sum / exchange.length;
+            document.getElementById('detail').innerHTML = 'Среднее значение: ' + averange;
+        }
     </script>
 </head>
 <body>
@@ -26,6 +45,11 @@
     <main>
         <button onclick="addBlocks()">Создать блоки</button>
         <div id="blocks"></div>
+
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-exchange"></table>
+        <div id="detail"></div>
+
     </main>
     <footer>
         &copy; Панчук Анастасия, ФБИ-13, 2 курс, 2023
