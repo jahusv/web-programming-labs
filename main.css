@@ -41,6 +41,7 @@ footer:not(hover) {
     transition: 1000ms;
 }
 
+
 a {
     color:green, yellow;
     transition: 1000ms;
@@ -48,7 +49,7 @@ a {
 }
 
  a:visited {
-    color:plum;
+    color:blue;
 }
 
 a:hover {

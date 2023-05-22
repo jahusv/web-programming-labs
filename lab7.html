@@ -90,9 +90,9 @@
                 circleContainer.appendChild(circle);
             }
         }
-
+        //таблица умножения
         function multiplicationTable() {
-            let a = 43;
+            let a = 47;
             let output = "";
             
             for(let i = 13; i <= 33; i++) {
@@ -101,6 +101,40 @@
             
             document.getElementById("table").innerHTML = output;
         }
+
+        // акции
+        function actions() {
+        const dates = [08.05, 10.05, 11.05, 12.05, 15.05, 16.05, 17.05, 18.05, 19.05];
+        const costs = [1.76, 1.86, 1.91, 1.88, 1.90, 1.91, 1.93, 1.93, 1.90];
+
+        let data = '';
+        let lastCost = null;
+        let maxCost = -Infinity;
+        let minCost = Infinity;
+        for (let i = 0; i < dates.length; i++) {
+            let diff = '';
+            if (lastCost !== null) {
+            diff = (costs[i] - lastCost).toFixed(2);
+            }
+            data += '<tr><td>' + dates[i] + '</td><td>' + costs[i] + '</td><td>' + diff + '</td></tr>';
+            lastCost = costs[i];
+
+            if (costs[i] > maxCost) {
+            maxCost = costs[i];
+            }
+            if (costs[i] < minCost) {
+            minCost = costs[i];
+            }
+        }
+
+  document.getElementById('actions-data').innerHTML = data;
+
+  const averageCost = (costs.reduce((a, b) => a + b, 0) / costs.length).toFixed(2);
+  document.getElementById('average-cost').innerHTML = 'Среднее значение стоимости акции: ' + averageCost;
+
+  document.getElementById('max-min-cost').innerHTML = 'Максимальное значение стоимости акции: ' + maxCost.toFixed(2) +
+    ';Минимальное значение стоимости акции: ' + minCost.toFixed(2);
+}
 
     </script>
 </head>
@@ -125,6 +159,24 @@
 
         <button onclick="multiplicationTable()">Таблица умножения</button>
         <div id="table"></div>
+
+        <button onclick="actions()">Курс акций</button>
+
+        <table border="1" id="actions-exchange">
+        <thead>
+            <tr>
+            <th>Дата</th>
+            <th>Цена акций</th>
+            <th>Разница</th>
+            </tr>
+        </thead>
+        <tbody id="actions-data">
+        </tbody>
+        </table>
+
+        <p id="average-cost"></p>
+        <p id="max-min-cost"></p>
+
 
 
 
