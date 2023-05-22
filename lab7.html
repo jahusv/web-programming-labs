@@ -11,6 +11,20 @@
         .transparentBloks {
             opacity: 0%;
         }
+
+        .circle{
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 10px;
+            padding: 20px;
+            margin: 10px;
+            font-size: 30px;
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
     </style>
 
     <script>
@@ -56,6 +70,26 @@
                 transparentBlocks.appendChild(block);
         }
     }
+        //круги
+        function createCircles() {
+            let inputA = document.getElementById('numberA');
+            let circleContainer = document.getElementById('circle-container');
+            let userNumber = parseInt(inputA.value);
+            circleContainer.innerHTML = ""; 
+            
+            for (let i = 0; i < userNumber; i++){
+                let circle = document.createElement('div');
+                circle.classList.add("circle");
+                circle.innerText = userNumber - i;
+                if ((userNumber-i) % 2 === 0) { //Проверяем на чётность числа
+                    circle.style.background = "green"; // Если число четное, окрашиваем в зеленый цвет
+                } 
+                else {
+                    circle.style.background = "red"; // Если не четное, окрашиваем в красный
+                } 
+                circleContainer.appendChild(circle);
+            }
+}
 
     </script>
 </head>
@@ -73,6 +107,10 @@
 
         <button onclick="addTransparentBlock()"> Создать полупрозрачные блоки </button>
         <div class="transparentBlocks" id="transparent-blocks"></div>
+
+        <label>Введите число кругов <br><input type="number" placeholder="Введите число кругов" value="5" id="numberA"></label><br>
+        <button onclick="createCircles()">Создать круги</button><br>
+        <div class="circle-container" id="circle-container"></div>
 
     </main>
     <footer>
