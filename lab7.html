@@ -28,12 +28,12 @@
     </style>
 
     <script>
-        // создание простфых блоков
+        // создание простых блоков
         function addBlocks() {
             let blocks = document.getElementById('blocks');
             for (let i = 0; i < 10; i++){
                 let block = document.createElement('div');
-                block.innerHTML = 'Блок №' + (i+1) + ':' + (2*i**2);
+                block.innerHTML = 'Блок №' + (i+1) + ': ' + (2*i**2);
             
                 blocks.appendChild(block);
             }
@@ -89,7 +89,18 @@
                 } 
                 circleContainer.appendChild(circle);
             }
-}
+        }
+
+        function multiplicationTable() {
+            let a = 43;
+            let output = "";
+            
+            for(let i = 13; i <= 33; i++) {
+                output = output + i + ' x ' + a + ' = ' + i*a + '<br>';
+            }
+            
+            document.getElementById("table").innerHTML = output;
+        }
 
     </script>
 </head>
@@ -111,6 +122,11 @@
         <label>Введите число кругов <br><input type="number" placeholder="Введите число кругов" value="5" id="numberA"></label><br>
         <button onclick="createCircles()">Создать круги</button><br>
         <div class="circle-container" id="circle-container"></div>
+
+        <button onclick="multiplicationTable()">Таблица умножения</button>
+        <div id="table"></div>
+
+
 
     </main>
     <footer>
