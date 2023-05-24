@@ -75,16 +75,16 @@
             let inputA = document.getElementById('numberA');
             let circleContainer = document.getElementById('circle-container');
             let userNumber = parseInt(inputA.value);
-            circleContainer.innerHTML = ""; 
+            circleContainer.innerHTML = "" ; 
             
             for (let i = 0; i < userNumber; i++){
                 let circle = document.createElement('div');
                 circle.classList.add("circle");
-                circle.innerText = userNumber - i;
+                circle.innerText = userNumber - i + 'a';
                 if ((userNumber-i) % 2 === 0) { 
-                    circle.style.background = "green"; }
+                    circle.style.background = "blue"; }
                 else {
-                    circle.style.background = "red"; 
+                    circle.style.background = "yellow"; 
                 } 
                 circleContainer.appendChild(circle);
             }

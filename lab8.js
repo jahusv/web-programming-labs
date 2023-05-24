@@ -8,10 +8,6 @@ function showDate(){
     out.innerHTML += 'Дата и время для локали Гонконга: ' + today.toLocaleString('zh-HK')+ '<br>';
 }
 
-function showDate (){
-
-}
-
 function showDaysCount(){
     let today = new Date();
     let inputDate = document.querySelector('input[type=date]');
@@ -36,3 +32,8 @@ function showTime (){
 }
 
 setInterval(showTime, 1000);
+
+function data(){
+    let today = new Date();
+    alert (today)
+}
