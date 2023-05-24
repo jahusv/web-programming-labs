@@ -65,3 +65,7 @@ a:active {
     background-color: green;
 }
 
+.time{
+    text-align: right;
+    color: lightgreen;
+}
