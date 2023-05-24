@@ -81,15 +81,15 @@
                 let circle = document.createElement('div');
                 circle.classList.add("circle");
                 circle.innerText = userNumber - i;
-                if ((userNumber-i) % 2 === 0) { //Проверяем на чётность числа
-                    circle.style.background = "green"; // Если число четное, окрашиваем в зеленый цвет
-                } 
+                if ((userNumber-i) % 2 === 0) { 
+                    circle.style.background = "green"; }
                 else {
-                    circle.style.background = "red"; // Если не четное, окрашиваем в красный
+                    circle.style.background = "red"; 
                 } 
                 circleContainer.appendChild(circle);
             }
         }
+    
         //таблица умножения
         function multiplicationTable() {
             let a = 47;
