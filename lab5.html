@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панчук Анастасия Андреевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a+b;
+            alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showMultiply() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a-b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showMultiplication() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a*b;
+            alert('Произведение ' + a + ' и ' + b + ' равно ' + result);
+        }    
+        
+        function showDivision() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a/b;
+            alert('Частное ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showAuthor() {
+            let author = 'Автор страницы:\n Панчук Анастасия Андреевна\n Ходите в театр почаще';
+            alert(author);
+        }
+
+        function changeOutput (buttonNum, backColor, textColor, borderColor){
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderBlockColor = borderColor;
+        }
+        
+        function rasschet (){
+            let inputA = document.getElementById('Apple');
+            let a = parseInt(inputA.value);
+            let inputB = document.getElementById('Pear');
+            let b = parseInt(inputB.value);
+            let inputC = document.getElementById('Orange');
+            let c = parseInt(inputC.value);
+            let inputD = document.getElementById('Melon');
+            let d = parseInt(inputD.value);
+            let inputE = document.getElementById('Strawberry');
+            let e = parseInt(inputE.value);
+            let result1 = a*100 + b*80 + c*150 + d*300 + e*110;
+            let output = document.getElementById('result1');
+            output.innerHTML = 'Итого: ' + result1;
+        }
+
+        function clickOn1() {
+            document.getElementById('1').style.display = 'none';           
+        }
+        function clickOn2(){
+            document.getElementById('2').style.display = 'none';        
+        }
+        function clickOn3 () {
+            document.getElementById('3').style.display = 'none';
+        }
+        function clickOn4 () {
+            document.getElementById('4').style.display = 'none';
+        }
+        function clickOn5 () {
+            document.getElementById('5').style.display = 'none';
+        }
+        function clickOn6 () {
+            document.getElementById('6').style.display = 'none';
+        }
+        function clickOn7(){
+            document.getElementById('7').style.display = 'none';
+        }
+        function clickOn8(){
+            document.getElementById('8').style.display = 'none';
+        }
+        function clickOn9(){
+            document.getElementById('9').style.display = 'none';
+        }
+        function clickOn10(){
+            document.getElementById('10').style.display = 'none';
+        }
+
+    </script>
+    <style>
+        .message {
+            cursor: pointer;
+            display: inline-block;
+            border: 1px solid green;
+            background-color: lightgray;
+            border-radius: 7px;
+            padding: 4px;
+            margin: 4px;
+
+        }
+             
+
+        .korzina {
+            border: 3px solid;
+            width: 320px;
+            margin: 10px;
+            border-radius: 7px;
+        }
+
+        .circles{
+            cursor: default;
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 10px;
+            padding: 20px;
+            margin: 10px;
+            font-size: 30px;
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+
+    <header onclick='showAuthor()'>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header> 
+
+    <main>
+        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showMultiply()">Найти разность чисел</div>
+        <div class="message" onclick="showMultiplication()">Найти произведение чисел</div>
+        <div class="message" onclick="showDivision()">Найти разность чисел</div>
+        <div class="message" onclick="showAuthor()">Узнать кто автор страницы</div>
+         
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1,'red','yellow', 'blue')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2,'black','lime', 'pink')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3,'green','purple', 'white')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4,'orange','white','yellow')">
+        </div>
+
+        <div>
+            <div id="output"></div>
+        </div>
+
+        <div class="korzina">
+            <h2>Корзина товаров</h2>
+            <label>Яблоки (100р/шт):<br><input type="number" value="9" id="Apple"></label><br>
+            <label>Груши (80р/шт):<br><input type="number" value="9" id="Pear"></label><br>
+            <label>Апельсины (150р/шт):<br><input type="number" value="9" id="Orange"></label><br>
+            <label>Дыни (300р/шт):<br><input type="number" value="9" id="Melon"></label><br>
+            <label>Клубника (110р/шт):<br><input type="number" value="9" id="Strawberry"></label><br>
+            <input type="button" value="Рассчитать" onclick="rasschet()"><br> 
+            <div id="result1"></div>
+        </div>
+
+       <div > 
+        <div class="circles" onclick="clickOn1()" style="position: fixed; right: 1340px; background-color: #f47f35;" id='1'>1</div>
+        <div class="circles" onclick="clickOn2()" style="position: fixed; right: 1260px; background-color: #f6069e;" id='2'>2</div>
+        <div class="circles" onclick="clickOn3()" style="position: fixed; right: 1180px; background-color: #0754f2;" id='3'>3</div>
+        <div class="circles" onclick="clickOn4()" style="position: fixed; right: 1100px; background-color: #e286cd;" id='4'>4</div>
+        <div class="circles" onclick="clickOn5()" style="position: fixed; right: 1020px; background-color: #461d59;" id='5'>5</div>
+        <div class="circles" onclick="clickOn6()" style="position: fixed; right: 940px; background-color: #94527a;" id='6'>6</div>
+        <div class="circles" onclick="clickOn7()" style="position: fixed; right: 860px; background-color: #7cd3af;" id='7'>7</div>
+        <div class="circles" onclick="clickOn8()" style="position: fixed; right: 780px; background-color: #ae2092;" id='8'>8</div>
+        <div class="circles" onclick="clickOn9()" style="position: fixed; right: 700px; background-color: #beb108;" id='9'>9</div>
+        <div class="circles" onclick="clickOn10()" style="position: fixed; right: 620px; background-color: #1379a1;" id='10'>10</div>
+    </div> 
+        <!-- <div>
+            <div id="circleId"></div>
+        </div> -->
+
+    </main>
+    <footer onclick="showAuthor()">
+        &copy;Панчук Анастасия, ФБИ-13, 2 курс, 2023
+    </footer> 
+</body>
+</html>

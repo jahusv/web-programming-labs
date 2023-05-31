@@ -19,8 +19,8 @@ body {
     font-family: 'OpenSans-Y2K';
 }
 main{
+
     padding-top: 150px;
-    width: 100%;
 }
 
 header {
@@ -37,9 +37,11 @@ header {
     width: 100%;
 }
 
+
 header div a{
     padding-inline: 10px;
 }
+
 
 footer {
     background-color: #fff;
@@ -129,3 +131,4 @@ img#andrey{
     float: right;
     margin-right: 200px;
 }
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панчук Анастасия Андреевна. Лабораторная  6</title>
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        .game {
+            border: 1px solid;
+            border-radius: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            width: 320px;
+            text-align: center;           
+        }
+
+        .rules {
+            border: 1px solid;
+            border-radius: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            width: 320px;
+            text-align: center; 
+        }
+        .color {
+            border: 1px solid;
+            margin: 10px auto;
+            padding: 10px;
+            width: 320px;
+            text-align: center; 
+            background-color: yellow;
+            color: white;
+            font-family: arial; 
+        }
+
+        .moveblock{
+            border: 1px solid;
+            margin: 10px auto;
+            padding: 40px;
+            width: 150px;
+            height: 150px;
+            box-sizing: border-box; 
+            background-color: #CD5C5C;
+            color: white;
+            font-family: arial;
+            left: 0;
+            position: absolute;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+
+    <script>
+        let number;
+        let count = 0;
+        function startGame(){
+            number = Math.floor( Math.random() * 100 ) + 1;
+            let screens = document.getElementsByClassName ('game');
+            screens [0].style.display = 'none';
+            screens [1].style.display = 'block';
+        }
+
+        function guess () {
+            count++;
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message =document.getElementById('result');
+            if (isNaN(userNumber)){
+                message.innerHTML = 'Вы не ввели число';
+            }
+            if (userNumber > 101 || 0 > userNumber) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100';
+            }
+            else if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            }
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens [1].style.display = 'none';
+                screens [2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+        }
+         function again () {
+            let screens = document.getElementsByClassName('game');
+            screens [2].style.display = 'none';
+            screens [1].style.display = 'block'; 
+            count = 0;
+            number = Math.floor( Math.random() * 100 ) + 1;
+            document.getElementById('user-number').value = '';
+            document.getElementById('result').innerHTML = '';
+            }
+        
+         function showRules() {
+            let screens = document.getElementsByClassName('rules');
+            screens [0].style.display = 'none';
+            screens [1].style.display = 'block';
+         }   
+
+         function hideRules() {
+            let screens = document.getElementsByClassName('rules');
+            screens [0].style.display = 'none';
+            screens [1].style.display = 'none';
+         }
+
+         function changeColor(div){
+           if (div.style.backgroundColor == 'yellow'){ 
+                div.style.fontFamily = 'Times New Roman';
+                div.style.backgroundColor = 'red';
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red'){
+                div.style.fontFamily = 'helvetica';
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else if (div.style.backgroundColor == 'black'){
+                div.style.fontFamily = 'garamond';
+                div.style.backgroundColor = 'green';
+                document.getElementById('color-name').innerHTML = 'зелёный';
+            }
+            else if (div.style.backgroundColor == 'green'){
+                div.style.fontFamily = 'herman';
+                div.style.backgroundColor = 'purple';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+            }
+            else {
+                div.style.fontFamily = 'arial';
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = 'жёлтый';
+            }
+         }
+        //  двигающийся блок
+         let isMoved = false;
+         function moveBlock(div) {
+            if (!isMoved){
+                div.style.left = '90%';
+                div.style.transitionDuration = '3s';
+                div.style.transform = 'rotate(0)';
+                isMoved = true;
+            }
+            else {
+                div.style.left = 0;
+                div.style.transitionDuration = '3s';
+                div.style.transform = 'rotate(4turn)';
+                isMoved = false;
+            }
+
+         }
+
+    </script>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header> 
+    <main>
+    <!-- первый экран игры-->
+        <div class="game">
+            <button onclick="startGame()">
+                Сыграть в игру
+            </button>
+        </div>
+        <!-- второй экран игры-->
+        <div class="game" style="display: none;">
+            <h1>Угадай число</h1>
+            <div>
+                Задумано число от 1 до 100. Угадайте, какое?<br>
+                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+        <!-- третий экран игры-->
+        <div class="game" style="display: none;">
+            <h1>Поздравляем, вы выиграли!</h1>
+            <div>
+                Задуманное число: <span id="number"></span>
+            </div>
+            <div>
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <button onclick="again()">
+                Сыграть еще раз
+            </button>
+        </div>
+        <!-- первый экран правил -->
+        <div class="rules">
+            <button onclick="showRules()">
+                Показать правила игры
+            </button>
+        </div>
+        <!-- второй экран правил -->
+        <div class="rules" style="display: none;">
+            <button onclick="hideRules()">
+                Скрыть правила игры
+            </button>
+           <h2>Правила игры:</h2>
+            <ol>
+                <li>Выберите число от 1 до 100.</li>
+                <li>Попробуйте угадать, какое число загадал компьютер.</li>
+                <li>Если ваше число больше или меньше загаданного, то компьютер даст подсказку.</li>
+                <li>Попробуйте угадать число за наименьшее количество попыток.</li>
+                <li>Удачи!</li>
+            </ol>
+        </div>
+
+        <!-- цветной блок -->
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id= "color-name">жёлтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+        </div>
+
+        <!-- двигающийся блок -->
+        <div class="moveblock" onclick="moveBlock(this)">
+           <span> Нажми на меня</span>
+        </div>
+
+    </main>
+    <footer>
+        &copy;Панчук Анастасия, ФБИ-13, 2 курс, 2023
+    </footer>
+</body>
+</html>

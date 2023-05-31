@@ -1,0 +1,42 @@
+body {
+    margin: 0px;
+}
+div {
+    position: absolute; 
+    border: 1px solid ;
+    border-radius: 50%;
+    z-index: 2;
+    background-color: #FFFFF0;
+    box-shadow: 1px 0.5px 0.5px 1px #4682B4;
+    opacity: 1;
+   }
+div:hover {
+    opacity: 0;
+}
+
+header {
+    background-image: linear-gradient(to right bottom, black, red);
+    color: whitesmoke;
+    padding: 10px;
+}
+header:hover {
+    background-image: linear-gradient(to  left bottom, black, red);
+}
+
+footer {
+    background: linear-gradient( to left, red,black); 
+    color: whitesmoke; 
+    padding: 10px; 
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999; 
+    width: 99%;
+}
+footer:hover {
+    background: linear-gradient( to right, red, black); 
+}
+footer:not(hover) {
+    transition: 0.3;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панчук Анастасия Андреевна. Лабраторная 7</title>
+    <link rel="stylesheet" href="main.css">
+    
+    <style>
+        .transparentBloks {
+            opacity: 0%;
+        }
+
+        .circle{
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 10px;
+            padding: 20px;
+            margin: 10px;
+            font-size: 30px;
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        // создание простых блоков
+        function addBlocks() {
+            let blocks = document.getElementById('blocks');
+            for (let i = 0; i < 10; i++){
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i+1) + ': ' + (2*i**2);
+            
+                blocks.appendChild(block);
+            }
+        }
+
+        // курс доллара
+        function showExchange() {
+            let exchange = [70.5174, 70.1217, 70.0414, 70.3847,70.5991,
+                            70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
+            let table = document.getElementById('dollar-exchange');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange [i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            let sum = 0;
+            for (let i = 0; i < exchange.length; i++){
+                sum = sum + exchange[i];
+            }
+            let averange = sum / exchange.length;
+            document.getElementById('detail').innerHTML = 'Среднее значение: ' + averange;
+        }
+
+        // полупрозрачные блоки
+        function addTransparentBlock(){
+            let transparentBlocks = document.getElementById('transparent-blocks');
+            for (let i = 0; i < 11; i++){
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок с прозрачностью '+ i*10 + '%';
+                block.style.opacity = i*10 + '%';
+
+                transparentBlocks.appendChild(block);
+        }
+    }
+        //круги
+        function createCircles() {
+            let inputA = document.getElementById('numberA');
+            let circleContainer = document.getElementById('circle-container');
+            let userNumber = parseInt(inputA.value);
+            circleContainer.innerHTML = "" ; 
+            
+            for (let i = 0; i < userNumber; i++){
+                let circle = document.createElement('div');
+                circle.classList.add("circle");
+                circle.innerText = userNumber - i + 'a';
+                if ((userNumber-i) % 2 === 0) { 
+                    circle.style.background = "blue"; }
+                else {
+                    circle.style.background = "yellow"; 
+                } 
+                circleContainer.appendChild(circle);
+            }
+        }
+    
+        //таблица умножения
+        function multiplicationTable() {
+            let a = 47;
+            let output = "";
+            
+            for(let i = 13; i <= 33; i++) {
+                output = output + i + ' x ' + a + ' = ' + i*a + '<br>';
+            }
+            
+            document.getElementById("table").innerHTML = output;
+        }
+
+        // акции
+        function actions() {
+        const dates = [08.05, 10.05, 11.05, 12.05, 15.05, 16.05, 17.05, 18.05, 19.05];
+        const costs = [1.76, 1.86, 1.91, 1.88, 1.90, 1.91, 1.93, 1.93, 1.90];
+
+        let data = '';
+        let lastCost = null;
+        let maxCost = -Infinity;
+        let minCost = Infinity;
+        for (let i = 0; i < dates.length; i++) {
+            let diff = '';
+            if (lastCost !== null) {
+            diff = (costs[i] - lastCost).toFixed(2);
+            }
+            data += '<tr><td>' + dates[i] + '</td><td>' + costs[i] + '</td><td>' + diff + '</td></tr>';
+            lastCost = costs[i];
+
+            if (costs[i] > maxCost) {
+            maxCost = costs[i];
+            }
+            if (costs[i] < minCost) {
+            minCost = costs[i];
+            }
+        }
+
+  document.getElementById('actions-data').innerHTML = data;
+
+  const averageCost = (costs.reduce((a, b) => a + b, 0) / costs.length).toFixed(2);
+  document.getElementById('average-cost').innerHTML = 'Среднее значение стоимости акции: ' + averageCost;
+
+  document.getElementById('max-min-cost').innerHTML = 'Максимальное значение стоимости акции: ' + maxCost.toFixed(2) +
+    ';'+ '<br>'+ 'Минимальное значение стоимости акции: ' + minCost.toFixed(2);
+}
+
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header> 
+    <main>
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
+
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-exchange"></table>
+        <div id="detail"></div>
+
+        <button onclick="addTransparentBlock()"> Создать полупрозрачные блоки </button>
+        <div class="transparentBlocks" id="transparent-blocks"></div>
+
+        <label>Введите число кругов <br><input type="number" placeholder="Введите число кругов" value="5" id="numberA"></label><br>
+        <button onclick="createCircles()">Создать круги</button><br>
+        <div class="circle-container" id="circle-container"></div>
+
+        <button onclick="multiplicationTable()">Таблица умножения</button>
+        <div id="table"></div>
+
+        <button onclick="actions()">Курс акций</button>
+
+        <table border="1" id="actions-exchange">
+        <thead>
+            <tr>
+            <th>Дата</th>
+            <th>Цена акций</th>
+            <th>Разница</th>
+            </tr>
+        </thead>
+        <tbody id="actions-data">
+        </tbody>
+        </table>
+
+        <p id="average-cost"></p>
+        <p id="max-min-cost"></p>
+
+
+
+
+    </main>
+    <footer>
+        &copy; Панчук Анастасия, ФБИ-13, 2 курс, 2023
+    </footer>
+</body>
+</html>

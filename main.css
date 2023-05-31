@@ -15,28 +15,41 @@ header:hover {
     color: lightcoral;
 }
 
+main{
+    margin: 10px 20px;
+}
+
 footer {
     background: linear-gradient( to left, red, orange, yellow, green, blue, navy, purple); 
     color: LightGreen; 
     padding: 10px; 
     text-align: right;
+    bottom: 0;
+    position: fixed;
+    width: 99%;
+    transition: 600ms;
+    left: 0;
+    z-index: 999; 
 }
+
 footer:hover {
     background: linear-gradient( to right, red, orange, yellow, green, blue, navy, purple); 
     color: lightcyan; 
+    transition: 1000ms;
 }
 footer:not(hover) {
-    transition: 0.3;
+    transition: 1000ms;
 }
+
 
 a {
     color:green, yellow;
-    transition: 600ms;
+    transition: 1000ms;
 
 }
 
  a:visited {
-    color:plum;
+    color:blue;
 }
 
 a:hover {
@@ -50,4 +63,9 @@ a:hover {
 a:active { 
     color: pink;
     background-color: green;
+}
+
+.time{
+    text-align: right;
+    color: lightgreen;
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панчук Анастасия Анастасия. Лабораторная работа 8</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="lab8.js"></script>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <div class="time" id="time">00:00:00</div>
+    </header>
+
+    <main>
+        <div id="current-date"></div>
+        <div>
+            <label>Дата рождения: <input type="date"></label>
+            <div>
+                <button onclick="showDaysCount()">Показать количество дней</button>
+            </div>
+            <div id="result"></div>
+            <div>
+                <button onclick="cleanDaysCount()">Очистить счетчик</button>
+            </div>
+        </div>
+
+        <div>
+            <button onclick="data()"></button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Панчук Анастасия, ФБИ-13, 2 курс, 2023
+    </footer>
+</body>
+</html>
