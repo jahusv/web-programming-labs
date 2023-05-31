@@ -1,0 +1,131 @@
+@font-face {
+	font-family: 'OpenSans-Y2K';
+	src: url('../fonts/opensans-y2k.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/opensans-y2k.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/opensans-y2k.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/opensans-y2k.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/opensans-y2k.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/opensans-y2k.svg#opensans-y2k') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+body {
+    font-size: 20px;
+    font-weight: 540;
+    line-height: 1.5;
+    text-align: left;
+    background-color: #fff;
+    margin: 0;
+    height: auto;
+    overflow: auto;
+    font-family: 'OpenSans-Y2K';
+}
+main{
+    padding-top: 150px;
+    width: 100%;
+}
+
+header {
+    border: 1px solid #121212;
+    background-color: #121212;
+    font-size: 35px;
+    font-family: 'OpenSans-Y2K';
+    font-weight: bold;
+    color: #fff;
+    text-align: justify;
+    padding: 10px;
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+}
+
+header div a{
+    padding-inline: 10px;
+}
+
+footer {
+    background-color: #fff;
+    font-family: Open;
+    box-sizing: border-box;
+    color: grey;
+    font-size: 1rem;
+    font-weight: bold;
+    height: auto;
+    margin-top: auto;
+    font-family: 'OpenSans-Y2K';
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+
+a {
+    color: #fff, ;
+    transition: 1000ms;
+    text-decoration: none;
+}
+
+ a:visited {
+    color:grey;
+}
+
+a:hover {
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:active { 
+    color: grey;
+    background-color: transparent;
+}
+
+H1{
+    font-size: 40px;
+    text-align: center;
+}
+a#links{
+    color: #b9b9bf;
+    font-size: 14px;
+}
+a#links:visited{
+    color: #b9b9bf;
+    font-size: 14px;
+}
+a#links:hover{
+    font-size: 14px;
+    color: #740c2c;
+}
+a#links:active{
+    color: #740c2c;
+    font-size: 14px;
+}
+
+a#logo{
+    color: #fff;
+    margin: 20px;
+}
+
+img#logo{
+    height: 41.75px;
+    width: 104px;
+    float: left; 
+    margin-right: 40px;
+}
+
+img#andrey{
+    height: 475px;
+    width: 384px;
+    float: right;
+    margin-right: 200px;
+}
