@@ -9,6 +9,7 @@ body {
     height: auto;
     overflow: auto;
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 main{
 
