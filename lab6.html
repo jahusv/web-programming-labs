@@ -51,6 +51,10 @@
             cursor: pointer;
         }
 
+        img#wear{
+            width: 400px;
+            height: 500px;
+        }
 
 
     </style>
@@ -155,6 +159,40 @@
                 isMoved = false;
             }
 
+         } 
+
+         function filter(){
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if (color == 'Красный' && type == 'Футболка'){
+                wear.src = 'https://storage-cdn8.gloria-jeans.ru/medias/BKT001826-1-02-300Wx300H.jpg?context=bWFzdGVyfHByb2R1Y3R8ODQ3NHxpbWFnZS9qcGVnfGgxYy9oZmUvOTIyMzEwNTE4Mzc3NC9CS1QwMDE4MjYtMS0wMi0zMDBXeDMwMEguanBnfDU1OThmZTZmMWUyMmZkZDVmYTgxYmNjN2E4YjQ4MzlkY2E1YjFiNTAzZDk2NTIzNzIyM2FkMjE5NTIxZDNmYTA';
+            }
+            else if (color == 'Черный' && type == 'Футболка'){
+                wear.src = 'https://basket-02.wb.ru/vol173/part17313/17313538/images/big/2.jpg';
+            }
+            else if (color == 'Белый' && type == 'Футболка'){
+                wear.src = 'https://www.nt-nn.com/_data/resources/img/thumbnails/13961.60_9_1000x1000.jpg';
+            }
+            else if (color == 'Красный' && type == 'Поло'){
+                wear.src = 'https://st.tsum.com/btrx/i/11/63/94/91/01_1526.jpg?u=1609796494';
+            }
+            else if (color == 'Белый' && type == 'Поло'){
+                wear.src = 'https://vipavenue.ru/upload/catalog_photos/c9a/c9ac23103329d0c5ac855c9eb85e35f8.jpg';
+            }
+            else if (color == 'Черный' && type == 'Поло'){
+                wear.src = 'https://st2.tsum.com/sig/f584633dc8e624285ffb628f3b478df9/width/1526/i/ef/83/d5/9f/ef83d59f-d1ca-3e57-a720-0621b7e0863d.jpg';
+            }
+            else if ( color == 'Красный' && type == 'Майка'){
+                wear.src = 'https://www.odevaika.ru/upload/catalog_images/193095/193095_2.jpg';
+            }
+            else if (color == 'Белый' && type == 'Майка'){
+                wear.src = 'https://my-choupette.ru/upload/iblock/664/664290fb3d27572cd0c524bb2fbad35b_thumb_455x610.jpg';
+            }
+            else {
+                wear.src = 'data:image/jpeg;base64,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';
+            }
          }
 
     </script>
@@ -226,6 +264,23 @@
            <span> Нажми на меня</span>
         </div>
 
+        <div style="margin-top: 200px; margin-bottom: 50px;">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+        
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+            <button onclick="filter()">OK</button>
+            <img id="wear">
+        </div>
     </main>
     <footer>
         &copy;Панчук Анастасия, ФБИ-13, 2 курс, 2023
