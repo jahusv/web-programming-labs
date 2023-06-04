@@ -56,6 +56,15 @@
             height: 500px;
         }
 
+        #block {
+            height: 100px;
+            background-color: #CD5C5C;
+            cursor: pointer;
+            margin: 300px;
+            border: 1px solid white;
+            margin-left: 10px;
+            
+        }
 
     </style>
 
@@ -195,6 +204,21 @@
             }
          }
 
+         function sizeBlock(div){
+            let width = parseInt(div.style.width);
+            if (isNaN(width)){
+                width = 50;
+            }
+            if (width < 1000){
+                width = width + 50;
+                div.style.width = width + 'px';
+            }
+            else {
+                width = width - 900;
+                div.style.width = width + 'px';
+            }
+         }
+
     </script>
 
 </head>
@@ -263,6 +287,8 @@
         <div class="moveblock" onclick="moveBlock(this)">
            <span> Нажми на меня</span>
         </div>
+
+        <div id="block" onclick="sizeBlock(this)" style="width: 100px;">Нажми на меня</div>
 
         <div style="margin-top: 200px; margin-bottom: 50px;">
             Цвет одежды:
